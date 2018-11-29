@@ -46,33 +46,40 @@ public class BankAccount {
         this.hasOverdraft = hasOverdraft;
     }
 
-    public boolean deposit (double amount) {
-        if (amount > 0.0) {
+    public boolean deposit (double amount) {    // return type to boolean
+        if (amount > 0.0) {                     // if statement to prevent deposits of 0 or less
             this.balance += amount;
-            return true;
+            return true;                        // returning "true" if succeeded,
         }
         else {
-            return false;
+            return false;                 // "false" if not...  please note, I only add comments because I have too :)
         }
     }
 
-    public boolean withdraw (double amount) {
-        if (amount > 0.0) {
-            this.balance -= amount;
-            return true;
+    public boolean withdraw (double amount) {   //return type from void to boolean
+        if (amount > 0.0) {                     //if statement to prevent withdrawals of 0 or less
+            if(this.balance - amount > 0 || this.hasOverdraft == true) {    /*if statement to prevent negative balance
+                                                                     after withdrawal, unless hasOverdraft is positive*/
+                this.balance -= amount;
+                return true;                                 // return " true if succeeded etc..
+            }
+            else{
+                return false;
+            }
         }
         else{
             return false;
         }
     }
 
-    public boolean addInterest (int interestRate) {
-        if(interestRate > 0 && this.balance > 0 ) {
+    public boolean addInterest (int interestRate) {    // same as above
+        if(interestRate > 0 && this.balance > 0 ) {  /*if statement for 0 and negative interest rates
+                                                          and to prevent applying interest on negative balance */
             this.balance += this.balance * (interestRate / 100.0);
             return true;
         }
         else{
-            return false;
+            return false;         //return statements to mach our methods data type.
         }
     }
 
