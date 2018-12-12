@@ -52,7 +52,7 @@ public class BankAccount {
             return true;                        // returning "true" if succeeded,
         }
         else {
-            return false;                 // "false" if not...  please note, I only add comments because I have too :)
+            return false;                 /* "false" if not...  please note, I only add comments because I have too :)*/
         }
     }
 

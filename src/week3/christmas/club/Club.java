@@ -1,9 +1,5 @@
 package week3.christmas.club;
 
-/**
- * Created by u1864886 on 06/12/2018.
- */
-
 import java.util.ArrayList;
 
 public class Club {
@@ -69,9 +65,8 @@ public class Club {
         christmasClub.addMember(steve);
         System.out.println(christmasClub);
         System.out.println("Total amount of contributions: "+christmasClub.totalContributions());
-        System.out.println("Total amount of turkeys that can be purchased at the moment: " +christmasClub.totalTurkeys(20));
+        System.out.println("Total amount of turkeys club affords to buy: "+christmasClub.totalTurkeys(20));
+
     }
-
-
 
 }
